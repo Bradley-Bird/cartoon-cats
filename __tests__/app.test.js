@@ -13,7 +13,10 @@ describe('cats routes', () => {
   it('/cats should return a list of cats', async () => {
     const res = await request(app).get('/cats');
     const expected = cats.map((cat) => {
-      return { id: cat.id, name: cat.name };
+      return {
+        id: cat.id,
+        name: cat.name,
+      };
     });
     expect(res.body).toEqual(expected);
   });
